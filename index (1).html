@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/ .min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul style="float:right;">
+        <li><a href="home.html">Home</a></li>
+        <li>
+            <a href="products.html">Products <span class="caret"></span></a>
+            <div>
+                <ul>
+                    <li><a href="products.html#chair">Chair</a><input type="text" width="20" style="display:inline;"></li>
+                    <li><a href="products.html#table">Table</a></li>
+                    <li><a href="cooker.html">Cooker</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="help.html">Help</a></li>
+    </ul>
+</nav>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10" id="toprow">
+            <h1>Grooveshark</h1>
+<p>
+We've made it even easier to enjoy community-driven, human-powered music recommendations. Discover music through people, and people through music. Your feedback will help us make the experience even better.</p>
+        </div>
+    </div>
+<div class="row" id="row1">
+<div class="col-sm-3"id="col1">
+    <p>one</p>
+</div>
+<div class="col-sm-3" id="row1col2">
+    <p>two</p>
+</div>
+<div class="col-sm-3">
+    <p>there</p>
+</div>
+<div class="col-sm-3">
+    <p>four</p>
+</div>    
+</div>
+    
+    
+<div class="row" id="row2">
+<div class="col-sm-3"id="col2">
+    <p>one</p>
+</div>
+<div class="col-sm-3">
+    <p>two</p>
+</div>
+<div class="col-sm-3">
+    <p>there</p>
+</div>
+<div class="col-sm-3">
+    <p>four</p>
+</div>    
+</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="gallery">
+<figure id="spinner">
+<img src="wanaka-tree.jpg" alt="">
+<img src="still-lake.jpg" alt="">
+<img src="pink-milford-sound.jpg" alt="">
+<img src="paradise.jpg" alt="">
+<img src="morekai.jpg" alt="">
+<img src="milky-blue-lagoon.jpg" alt="">
+<img src="lake-tekapo.jpg" alt="">
+<img src="milford-sound.jpg" alt="">
+</figure>
+                <a href="#" style="float: left" onclick="galleryspin('-')">◀</a>
+<a href="#" style="float: right" onclick="galleryspin('')">▶</a>
+</div>
+        </div>
+    </div>
+ <footer style="background-color:#ccc; width:100%; height:55px;">
+  <p>Posted by: Hege Refsnes<a class="btn" href="#">log in</a>  <button type="button" class="btn" href="about.html">Basic Button</button></p>
+  <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+</footer>
+</body>
+    {% include 'menu.html' %}
+
+</html>
+<script>
+    var angle = 0;
+function galleryspin(sign) {
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+    </script>
