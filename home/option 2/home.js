@@ -1,5 +1,4 @@
 // TRACKS PICK SIMULATION
-
     function shuffle(array) {
       var m = array.length, t, i;
 
@@ -56,7 +55,6 @@
     '{"cover":"common/'+ rand_tracks[21]+'.jpg"},' +
     '{"cover":"common/'+ rand_tracks[22]+'.jpg"},' +
     '{"cover":"common/'+ rand_tracks[23]+'.jpg"}]}';
-
 // TRACKS PICK SIMULATION
 
 
@@ -64,24 +62,39 @@
 obj = JSON.parse(tracks);
 
 html='';
+track_info='';
 
 for (var i=0; i<24 ; i++){
-    html += '<div class="element"><img id="track" class="col-md-2 img-thumbnail" alt="" src="'+ obj.tracks[i].cover +'"></div>';
+    track_info = 'data-title="Track Title '+(i+1)+'" data-content="Artist '+(i+1)+'<br>Duration: '+
+                  (i+1)+':00<br>Album '+(i+1)+'<br>'+(i+1)+'/'+(i+1)+'"'
+    html += '<div class="element" '+track_info+'><img id="track" class="col-md-2 img-thumbnail" alt="" src="../'+ obj.tracks[i].cover +'"></div>';
       
 };
 
 $('.grind').append(html); 
 
 
+//Functionalities implemented 
 $(document).ready(function(){
 
-	//Rotate the refresh icon once 
+    $('.element').webuiPopover({
+            constrains: 'horizontal', 
+            trigger:'hover',
+            multi: true,
+            placement:'auto',
+            style:'inverse',
+            width:200,
+            type: 'html'
+    });
+
+	// Generates new songs for the grind
 	$('.new-songs').click(function(){
     	var interval = null;
     	var counter = 0;
     	var $this = $('.refresh');
     	clearInterval(interval);
  
+        //Rotate the refresh icon once 
    		interval = setInterval(function(){
         	if (counter != -360) {
             	counter -= 5;
@@ -92,12 +105,12 @@ $(document).ready(function(){
             	});
         	}
     	}, 10);
-       
-        // TRACKS PICK SIMULATION
-        var track_id = range(1,100);
-        var rand_tracks = shuffle(track_id).slice(0,24);
 
-        var tracks = '{"tracks":[' +
+        // TRACKS PICK SIMULATION
+        track_id = range(1,100);
+        rand_tracks = shuffle(track_id).slice(0,24);
+
+        tracks = '{"tracks":[' +
         '{"cover":"common/'+ rand_tracks[0]+'.jpg"},' +
         '{"cover":"common/'+ rand_tracks[1]+'.jpg"},' +
         '{"cover":"common/'+ rand_tracks[2]+'.jpg"},' +
@@ -130,14 +143,25 @@ $(document).ready(function(){
         html='<div class="row grind">';
 
         for (var i=0; i<24 ; i++){
-            html += '<div class="element"><img id="track" class="col-md-2 img-thumbnail" alt="" src="'+ obj.tracks[i].cover +'"></div>';
-              
+            track_info = 'data-title="Track Title '+(i+1)+'" data-content="Artist '+(i+1)+'<br>Duration: '+
+                        (i+1)+':00<br>Album '+(i+1)+'<br>'+(i+1)+'/'+(i+1)+'"'
+            html += '<div class="element" '+track_info+'><img id="track" class="col-md-2 img-thumbnail" alt="" src="../'+ obj.tracks[i].cover +'"></div>';
         };
         html += '</div>'
         $('.grind').replaceWith(html); 
-	});	
+
+        $('.element').webuiPopover({
+            constrains: 'horizontal', 
+            trigger:'hover',
+            multi: true,
+            placement:'auto',
+            style:'inverse',
+            width:200,
+            content: $('.element').attr('data-artist')+'<br>'+$('.element').attr('data-len')+'<br>'
+                     +$('.element').attr('data-album')+'<br>'+$('.element').attr('data-rating'),
+            type: 'html'
+        });
+	});
 
 });
 
-                               
-          
