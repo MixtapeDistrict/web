@@ -77,7 +77,7 @@
 	    vertical-align:top;
 	}
 	.element:after {
-	    content: "\a" attr(data-title) "\a" attr(data-artist) "\a" attr(data-len) "\a" attr(data-album) "\a" attr(data-rating);
+	    content: "\a" attr(data-title) "\a" attr(data-artist) "\a" attr(data-len) "\a" attr(data-album) "\a" attr(data-rating) " (" attr(data-reference) ") ";
 		white-space : pre ;
 	    font-weight: bold;
 	    font-size: 14px;

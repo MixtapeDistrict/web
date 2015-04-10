@@ -1,3 +1,18 @@
+// Carousel function
+var angle = 0;
+function galleryspin(sign) {
+    spinner = document.querySelector("#spinner");
+    if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+    spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+
+
+
+
+
+
+
+
 // TRACKS PICK SIMULATION
     function shuffle(array) {
       var m = array.length, t, i;
@@ -73,9 +88,10 @@ for (var i=0; i<24 ; i++){
 
 $('.grind').append(html); 
 
-
 //Functionalities implemented 
 $(document).ready(function(){
+
+
 
     $('.element').webuiPopover({
             constrains: 'horizontal', 
@@ -86,7 +102,6 @@ $(document).ready(function(){
             width:175,
             type: 'html'
     });
-
 	// Generates new songs for the grind
 	$('.new-songs').click(function(){
     	var interval = null;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HitPlayShare</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="gallery">
+          <figure id="spinner">
+            <img src="common/1.jpg" alt="">
+            <img src="common/2.jpg" alt="">
+            <img src="common/3.jpg" alt="">
+            <img src="common/4.jpg" alt="">
+            <img src="common/5.jpg" alt="">
+            <img src="common/6.jpg" alt="">
+            <img src="common/7.jpg" alt="">
+            <img src="common/8.jpg" alt="">
+          </figure>
+          <a href="#" style="float: left" onclick="galleryspin('-')">+</a>
+          <a href="#" style="float: right" onclick="galleryspin('')">-</a>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+      var angle = 0;
+      function galleryspin(sign) {
+          spinner = document.querySelector("#spinner");
+          if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+          spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+      };
+    </script>
+</body>
+</html>
+
