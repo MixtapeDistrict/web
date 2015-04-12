@@ -100,12 +100,11 @@
               Play the track currently in the carousel, Change between other playlists if LogIn, Once again IE fail us :( (need adaptation)-->
         <div class="row playlist">
           <div class="col-md-10">
-            <div id="gallery">
-              <figure id="spinner">
-              </figure>
-            </div>
-            <button type="button" style=float:left class="btn btn-default ss-icon" onclick="galleryspin('-')">&lt;</button>
-            <button type="button" style=float:right class="btn btn-default ss-icon" onclick="galleryspin('-')">&gt;</button>
+        <section class="gallery">
+          <div id="carousel"></div>
+          <button type="button" style=float:left class="btn btn-default ss-icon" onclick="galleryspin('-')">&lt;</button>
+          <button type="button" style=float:right class="btn btn-default ss-icon" onclick="galleryspin('')">&gt;</button>
+        </section>
           </div>
           <!-- Playlist Track Information (Currently: static), TODO: Show information of the current track -->
           <div class="col-md-2 pull-left">
