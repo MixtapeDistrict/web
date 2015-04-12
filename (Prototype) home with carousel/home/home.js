@@ -1,19 +1,4 @@
-// Carousel function
-var angle = 0;
-function galleryspin(sign) {
-    spinner = document.querySelector("#spinner");
-    if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
-    spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
-}
-
-
-
-
-
-
-
-
-// TRACKS PICK SIMULATION
+// TRACKS PICK SIMULATION: Won't be here when the database is connected
     function shuffle(array) {
       var m = array.length, t, i;
 
@@ -70,7 +55,8 @@ function galleryspin(sign) {
     '{"cover":"common/'+ rand_tracks[21]+'.jpg"},' +
     '{"cover":"common/'+ rand_tracks[22]+'.jpg"},' +
     '{"cover":"common/'+ rand_tracks[23]+'.jpg"}]}';
-// TRACKS PICK SIMULATION
+
+// END TRACKS PICK SIMULATION: Won't be here when the database is connected
 
 
 //create the grind
@@ -78,21 +64,41 @@ obj = JSON.parse(tracks);
 
 html='';
 track_info='';
-
+// Create each individual track: index used to provide example, will be replaced with the actual info.
 for (var i=0; i<24 ; i++){
     track_info = 'data-title="Track Title '+(i+1)+'" data-content="Artist '+(i+1)+'<br>Duration: '+
                   (i+1)+':00<br>Album '+(i+1)+'<br>'+(i+1)+'/'+(i+1)+'"'
     html += '<div class="element" '+track_info+'><img id="track" class="col-md-2 img-thumbnail" alt="" src="../'+ obj.tracks[i].cover +'"></div>';
       
 };
+//insert into the grind
+$('.grind').append(html);
 
-$('.grind').append(html); 
+// Create the elements to display in the carousel
+html='';
+for (var i=0; i<8 ; i++){
+
+    html += '<img src="../'+ obj.tracks[i].cover +'" alt="">';    
+      
+};
+
+$('#spinner').append(html); 
 
 //Functionalities implemented 
+
+// Carousel function
+    var angle = 0;
+    function galleryspin(sign) {
+        spinner = document.querySelector("#spinner");
+        if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+        spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+    }
+
+// Enable these functionalities when page is loaded    
 $(document).ready(function(){
 
 
-
+    // Use Jquery plug-in to create the Info-display
     $('.element').webuiPopover({
             constrains: 'horizontal', 
             trigger:'hover',
@@ -102,6 +108,7 @@ $(document).ready(function(){
             width:175,
             type: 'html'
     });
+
 	// Generates new songs for the grind
 	$('.new-songs').click(function(){
     	var interval = null;
@@ -121,7 +128,7 @@ $(document).ready(function(){
         	}
     	}, 10);
 
-        // TRACKS PICK SIMULATION
+        // TRACKS PICK SIMULATION: Won't be here when the database is connected
         track_id = range(1,100);
         rand_tracks = shuffle(track_id).slice(0,24);
 
@@ -150,13 +157,14 @@ $(document).ready(function(){
         '{"cover":"common/'+ rand_tracks[21]+'.jpg"},' +
         '{"cover":"common/'+ rand_tracks[22]+'.jpg"},' +
         '{"cover":"common/'+ rand_tracks[23]+'.jpg"}]}';
-        // TRACKS PICK SIMULATION
+        
+        // END TRACKS PICK SIMULATION: Won't be here when the database is connected
 
         // Replace with new tracks
         obj = JSON.parse(tracks);
 
         html='<div class="row grind">';
-
+        // Create each individual track: index used to provide example, will be replaced with the actual info.
         for (var i=0; i<24 ; i++){
             track_info = 'data-title="Track Title '+(i+1)+'" data-content="Artist '+(i+1)+'<br>Duration: '+
                         (i+1)+':00<br>Album '+(i+1)+'<br>'+(i+1)+'/'+(i+1)+'"'
@@ -165,6 +173,7 @@ $(document).ready(function(){
         html += '</div>'
         $('.grind').replaceWith(html); 
 
+        // Use Jquery plug-in to create the new tracks Info-display
         $('.element').webuiPopover({
             constrains: 'horizontal', 
             trigger:'hover',

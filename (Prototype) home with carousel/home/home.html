@@ -41,7 +41,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
-            <!-- Sign up form -->
+            <!-- Sign up form, TODO: Enable the creation of a account from here -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sign up<span class="caret"></span></a>
               <ul class="dropdown-menu form-group" id="signUp" role="menu">
@@ -63,7 +63,7 @@
               </ul>                    
             </li>
 
-            <!-- Log In form -->
+            <!-- Log In form, TODO: Implement LogIn, Replace both buttoms with a profile buttom -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Log in<span class="caret"></span></a>
               <ul class="dropdown-menu form-group" id="logIn" role="menu">
@@ -89,24 +89,26 @@
     <!-- All the content on the homepage -->
     <div id="content" class="container-fluid">
       <div class="container">
-     
+
+        <!-- Track grid, TODO: Play a track, Display which track is currently playing -->
         <div class="main row">
           <div class="row grind">                      
           </div>
         </div> 
-
+        
+        <!-- Playlist (Sample Carousel), TODO: Dinamically increment number of elements(Responsive), Insert and Delete elements, 
+              Play the track currently in the carousel, Change between other playlists if LogIn-->
         <div class="row playlist">
           <div class="col-md-10">
             <div id="gallery">
               <figure id="spinner">
-                <img src="../common/2.jpg" alt="">
-                <img src="../common/4.jpg" alt="">
               </figure>
-              <a style="float: left" onclick="galleryspin('-')">◀</a>
-              <a style="float: right" onclick="galleryspin('')">▶</a>
             </div>
+            <button type="button" style=float:left class="btn btn-default ss-icon" onclick="galleryspin('-')">&lt;</button>
+            <button type="button" style=float:right class="btn btn-default ss-icon" onclick="galleryspin('-')">&gt;</button>
           </div>
-          <div class="col-md-2 pull-right">
+          <!-- Playlist Track Information (Currently: static), TODO: Show information of the current track -->
+          <div class="col-md-2 pull-left">
             <p><b>Track Information:</b></p>
             <p>Track Name</p>
             <p>Artist</p>
@@ -118,9 +120,6 @@
 
       </div>
     </div>
-
-
-
     <nav id="footer" class="navbar">
       <p id="about" class="navbar-text">2015 Rohan Sharma, Vui Chee, Alexander Jackson,<br> Andres Landeta, Chen Zhao, Joshua Wright</p>
     </nav>
