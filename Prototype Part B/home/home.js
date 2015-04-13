@@ -1,4 +1,6 @@
 // TRACKS PICK SIMULATION: Won't be here when the database is connected
+    
+    //Suffle an int Array
     function shuffle(array) {
       var m = array.length, t, i;
 
@@ -17,6 +19,7 @@
       return array;
     }
 
+    // Make an Array form start to end of size(end-start+1)
     function range(start, end) {
         var array = [];
         for (var i = start; i <= end; i++) {
@@ -25,8 +28,10 @@
         return array;
     }
 
+    // Simulates the las 100 tracks
     var track_id = range(1,100);
 
+    //Select the first 24 elements of the random array
     var rand_tracks = shuffle(track_id).slice(0,24);
 
     //Test for the grind
@@ -59,7 +64,7 @@
 // END TRACKS PICK SIMULATION: Won't be here when the database is connected
 
 
-//create the grind
+// Create the grind
 obj = JSON.parse(tracks);
 
 html='';
@@ -71,7 +76,7 @@ for (var i=0; i<24 ; i++){
     html += '<div class="element" '+track_info+'><img id="track" class="col-md-2 img-thumbnail" alt="" src="../'+ obj.tracks[i].cover +'"></div>';
       
 };
-
+// Put all racks in place
 $('.grind').append(html); 
 
 // Enable these functionalities when page is loaded   
@@ -166,6 +171,7 @@ var PANEL_SIZE = 130;
 var TO_RADIANS = Math.PI/180;
 var BACKFACE_INVISIBLE = true;
 
+// Creates a Carousel from an Array 
 function doCarousel(data){
 	var spinner = $("#carousel");
 	var interval = 360/data.length;
@@ -182,6 +188,7 @@ function doCarousel(data){
 	}
 }
 
+// Makes the images on the carousel spin, updating the css
 var angle = 0;
 function galleryspin(sign) {
 	var carousel = document.querySelector('#carousel');
