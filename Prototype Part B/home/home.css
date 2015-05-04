@@ -129,3 +129,53 @@
 		border: 2px solid;
 	}
 	
+	#jp_container_1{
+		height: 80px;
+	}
+	
+	.track-info {
+		width: 100%;
+	}
+	
+	.jp-current-time {
+		float: left;
+	}
+	
+	.jp-details {
+		margin: 0 auto;
+	}
+	
+	.jp-duration {
+		float: right;
+	}
+	
+	.jp-volume-max {
+		float: right;
+	}
+	
+	.jp-mute {
+		float: left;
+	}
+	
+	.jp-volume-bar{
+		float: right;
+	}
+	
+	.jp-controls {	
+		float: left;
+		height: 100%;
+		width: 20%;	
+	}
+	
+	.seek-bar {
+		height: 100%;
+		width: 40%;
+		margin: 0 auto;
+	}
+	
+	.jp-volume-controls {
+		float: right;
+		height: 100%;
+		width: 20%;
+	}
+	

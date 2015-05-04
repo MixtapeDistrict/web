@@ -103,7 +103,8 @@
   width: 440px;
   margin: 0 auto 10px auto;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden; 
+  }
 
 .jp-audio .jp-controls-holder {
   height: 80px; }
@@ -120,7 +121,8 @@
 
 .jp-audio .jp-controls,
 .jp-audio-stream .jp-controls {
-  margin: 0 auto; }
+  margin: 0 auto; 
+  float: left;}
 
 .jp-audio-stream .jp-controls {
   width: 100px; }
@@ -283,11 +285,13 @@ div.jp-seeking-bg {
 
 .jp-progress {
   background: url("../image/jplayer.pink.flag.jpg") 0px -240px no-repeat;
-  width: 197px;
+  width: 100%;
   height: 13px;
   padding: 0 2px 2px 2px;
+  margin: 0px 0px;
   margin-bottom: 4px;
-  overflow: hidden; }
+  overflow: hidden; 
+  }
 
 div.jp-video .jp-progress {
   border-top: 1px solid #180a1f;
@@ -321,7 +325,7 @@ div.jp-video .jp-progress {
   height: 30px; }
 
 .jp-volume-controls button {
-  position: absolute;
+  position: relative;
   display: block;
   overflow: hidden;
   text-indent: -9999px;
@@ -334,12 +338,10 @@ div.jp-video .jp-progress {
 
 .jp-audio .jp-volume-controls .jp-mute,
 .jp-audio-stream .jp-volume-controls .jp-mute {
-  top: -6px;
   left: 0; }
 
 .jp-audio .jp-volume-controls .jp-volume-max,
 .jp-audio-stream .jp-volume-controls .jp-volume-max {
-  top: -6px;
   right: 0; }
 
 .jp-video .jp-volume-controls .jp-mute,
@@ -371,7 +373,7 @@ div.jp-video .jp-progress {
 
 .jp-volume-bar {
   background: url("../image/jplayer.pink.flag.jpg") 0px -300px repeat-x;
-  position: absolute;
+  position: relative;
   width: 197px;
   height: 4px;
   padding: 2px 2px 1px 2px;
@@ -405,39 +407,18 @@ div.jp-video .jp-progress {
 .jp-current-time, .jp-duration {
   width: 70px;
   font-size: .5em;
-  color: #8c7a99; }
-
-.jp-current-time {
-  float: left;
-  cursor: default; }
+  color: #8c7a99; 
+  }
 
 .jp-duration {
-  float: right;
-  text-align: right;
+  float: left;
   cursor: pointer; }
-
-.jp-video .jp-current-time {
-  padding-left: 20px; }
-
-.jp-video .jp-duration {
-  padding-right: 20px; }
 
 /* @end */
 /* @group playlist */
 .jp-details {
   font-size: .7em;
-  margin: 0;
-  padding: 0; }
-
-.jp-details .jp-title {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-align: center;
-  cursor: default; }
-
-.jp-video .jp-details {
-  margin: 0 90px 10px; }
+  }
 
 .jp-playlist ul {
   list-style-type: none;
