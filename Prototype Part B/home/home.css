@@ -129,53 +129,14 @@
 		border: 2px solid;
 	}
 	
-	#jp_container_1{
-		height: 80px;
-	}
-	
-	.track-info {
+	.jp-audio {
 		width: 100%;
 	}
 	
-	.jp-current-time {
-		float: left;
+	.jp-audio .jp-type-single .jp-progress {
+		width: 80%; 
 	}
 	
-	.jp-details {
-		margin: 0 auto;
-	}
-	
-	.jp-duration {
-		float: right;
-	}
-	
-	.jp-volume-max {
-		float: right;
-	}
-	
-	.jp-mute {
-		float: left;
-	}
-	
-	.jp-volume-bar{
-		float: right;
-	}
-	
-	.jp-controls {	
-		float: left;
-		height: 100%;
-		width: 20%;	
-	}
-	
-	.seek-bar {
-		height: 100%;
-		width: 40%;
-		margin: 0 auto;
-	}
-	
-	.jp-volume-controls {
-		float: right;
-		height: 100%;
-		width: 20%;
-	}
-	
+	.jp-audio .jp-type-single .jp-time-holder {
+	left: 110px;
+	width: 80%; }
