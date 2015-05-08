@@ -85,39 +85,27 @@
       </div>
     </nav>
 
-    <div id="content" class="container-fluid"> <!-- Added container-fluid to make the footer work --> 
-      <div class="container"> <!-- Added container class to do the central allign magic for us -->      
-        <div class="row" id="album-info"> <!-- Changed row id to give more meaning -->
+    <div id="content" class="container-fluid"> 
+      <div class="container">     
+        <div class="row" id="album-info"> 
             <div class="col-md-2">
-                <img class="album-cover" src="../common/2.jpg" alt="album cover"> <!-- Added alt attribute an class --> 
+                <img class="album-cover" src="../common/2.jpg" alt="album cover"> 
             </div>
             <div class="col-md-10">
-                <p class="album-name">Album Name</p> <!-- Added classes for access and css-->
+                <p class="album-name">Album Name</p> 
                 <p class="album-artist">Artist Name</p>
                 <p class="album-year">2010</p>
-                <p><span class='tracks-number'>5</span> Tracks</p> <!-- Added span so the number can be changed --> 
+                <p><span class='tracks-number'>5</span> Tracks</p>
+                <button type="button" class="btn profile-btn btn-danger" data-toggle="modal" data-target="#update-album">
+                    Edit Album
+                </button> 
             </div>
         </div>
-        <div class="row" id="album-tracks"> <!-- Changed row id to give more meaning -->
-           <table class="table table-striped"> <!-- Use col-md to make all the alligment and put all the style in css -->
-
-             <tbody>
-               <tr class="info">
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll">(Artist Collaboration)</span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll"></span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-               </tr>
+        <div class="row" id="album-tracks"> 
+           <table class="table table-striped"> 
+                         THE TABLE SHOULD BE DISPLAYED INSTEAD 
+            <tbody class="album-tracks">
+            <!-- JS need to create this code for each pair of songs and class="info" for each odd (%2=1) row
                <tr class="active">
                   <td class="col-md-6">
                     <i class="glyphicon glyphicon-play-circle col-md-1"></i>
@@ -133,59 +121,34 @@
                       <p class= "track-duration"> 1:00 </p>
                     </div>
                   </td>
-               </tr>
-               <tr class="info">
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll"></span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll">(Artist Collaboration)</span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-               </tr>
-               <tr class="active">
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll">(Artist Collaboration)</span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll"></span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-               </tr>              
-               <tr class="info">
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll"></span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-                  <td class="col-md-6">
-                    <i class="glyphicon glyphicon-play-circle col-md-1"></i>
-                    <div class="col-md-11 track-info">
-                      <p class="track-name h4">Track Name <span class="coll">(Artist Collaboration)</span></p>
-                      <p class= "track-duration"> 1:00 </p>
-                    </div>
-                  </td>
-               </tr>         
+               </tr>-->       
             </tbody>
            </table>
         </div>
       </div> 
+    </div>
+
+    <!--Edit Album modal-->
+    <div class="modal fade myModal" id="update-album" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit Album</h4>
+          </div>
+          <div class="modal-body">            
+            <!--Edit Album -->
+            <!--You need to create html here to display songs in a grind 
+                (Image and Name) and a button on the side, treat this like a little browser, it has same Bootstrap properties and clases, should display three songs in each row -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- Make it possbile to submit the form in the modal -->
+            <button id="submit-update" class="btn btn-primary">Update Album</button>       
+          </div>
+        </div>
+      </div>
     </div>         
       
     <nav id="footer" class="navbar">
@@ -198,7 +161,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="../webui-popover/dist/jquery.webui-popover.min.js"></script>
-  <script src="home.js"></script>
+  <script src="album.js"></script>
 </body>
 </html>
